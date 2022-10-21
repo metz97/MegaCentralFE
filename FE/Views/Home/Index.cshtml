@@ -1,0 +1,74 @@
+﻿@model TrBpkbModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .myform {
+            border: 2px outset black;
+            background-color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .myforma {
+            font-size: large;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+    @Html.Label((string)ViewBag.Message)
+    <div class="myform">
+        <form asp-action="Index" method="post">
+            <div class="myforma">
+                <label asp-for="AgreementNumber" class="">Agreement Number</label>
+                <input asp-for="AgreementNumber" />
+            </div>
+            <div class="myforma">
+                <label asp-for="BranchId">Branch Id</label>
+                <input asp-for="BranchId" />
+            </div>
+            <div class="myforma">
+                <label asp-for="BpkbNo">No. BPKB</label>
+                <input asp-for="BpkbNo" />
+            </div>
+            <div class="myforma">
+                <label asp-for="BpkbDateIn">BpkbDateIn</label>
+                <input asp-for="BpkbDateIn" />
+            </div>
+            <div class="myforma">
+                <label asp-for="BpkbDate">BpkbDate</label>
+                <input asp-for="BpkbDate" />
+            </div>
+            <div class="myforma">
+                <label asp-for="FakturNo">FakturNo</label>
+                <input asp-for="FakturNo" />
+            </div>
+            <div class="myforma">
+                <label asp-for="FakturDate">FakturDate</label>
+                <input asp-for="FakturDate" />
+            </div>
+            <div class="myforma">
+                <label asp-for="PoliceNo">PoliceNo</label>
+                <input asp-for="PoliceNo" />
+            </div>
+            <div class="myforma">
+                <label asp-for="LocationId">LocationId</label>
+                <select asp-for="LocationId" asp-items="ViewBag.Location" class="form-control"></select>
+            </div>
+            <div>
+                <p></p>
+                <button type="submit">Submit form</button>
+                <p></p>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
